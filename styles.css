@@ -1,0 +1,120 @@
+/* importar URL */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;600&display=swap');
+
+/* Resetar margens e paddings */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* configurando background */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: rgb(191,191,191);
+    background: linear-gradient(0deg, rgba(191,191,191,1) 0%, rgba(64,64,64,1) 100%); 
+}
+
+/* resultados */
+.container {
+    background: #fff;
+    border-radius: 25px;
+    padding: 3rem 7rem;
+    box-shadow: 0 5px 15px rgba(64,64,64,0.5);
+}
+
+.container.start .user-result {
+    animation: userShake 0.7s ease Infinite;
+}
+
+@keyframes userShake {
+    50% {
+        transform: translateY(10px)
+    }
+}
+
+.container.start .machine-result {
+    animation: machineShake 0.7s ease Infinite;
+}
+
+@keyframes machineShake {
+    50% {
+        transform: translateY(-10px)
+    }
+}
+
+.container.start .options {
+    pointer-events: none;
+}
+
+.result-images {
+    display: flex;
+    gap: 7rem;
+}
+
+.result-images img {
+    width: 150px;
+}
+
+.user-result img {
+    transform: rotate(-90deg) scaleY(-1);
+}
+
+.machine-result img {
+    transform: rotate(-90deg);
+}
+
+.result {
+    text-align: center;
+    font-family: 'Inter';
+    font-size: 2rem;
+    font-weight: 600;
+    padding-top: 2.5rem;
+}
+
+/* options */
+.options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 3rem;
+}
+
+.option-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.5;
+    transition: 0.35s ease;
+    cursor: pointer;
+}
+
+.option-image:hover {
+    opacity: 1;
+}
+
+.option-image.active {
+    opacity: 1;
+}
+
+.option-image img {
+    width: 75px;
+    pointer-events: none;
+}
+
+.option-image h2 {
+    font-family: 'Poppins';
+    font-size: 1.25rem;
+    padding-top: .25rem;
+    pointer-events: none;
+}
+
+.punishment {
+    text-align: center;
+    font-family: 'Inter';
+    font-size: 1.25rem;
+    padding-top: 1.5rem;
+}
