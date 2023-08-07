@@ -2,13 +2,17 @@ const gameContainer = document.querySelector(".container"),
 userResult = document.querySelector(".user-result img"),
 machineResult = document.querySelector(".machine-result img"),
 result = document.querySelector(".result"),
-optionImages = document.querySelectorAll(".option-image")
+optionImages = document.querySelectorAll(".option-image"),
+punisher = document.querySelector(".punishments"),
+punish = document.querySelector(".punishments .punishment")
 
 /* itera as imagens */
 optionImages.forEach((image, index) => {
     image.addEventListener("click", (e) => {
         image.classList.add("active")
         result.textContent = "Aguarde..."
+
+        punisher.style.display = "block"
 
         userResult.src = machineResult.src = "./assets/rock.png"
 
@@ -46,6 +50,18 @@ optionImages.forEach((image, index) => {
             let outcomeValue = outcomes[userValue + machineValue]
     
             result.textContent = userValue === machineValue ? "Match Draw" : `${outcomeValue} won.`
+
+            if (outcomeValue !== "User") {
+                let punishments = ["agachamentos", "flexões inclinadas", "polichinelos"]
+
+                let randomNumber2 = Math.floor(Math.random() * 3)
+                let randomNumber3 = Math.floor(Math.random() * 19 + 1) 
+                let randPunishment = punishments[randomNumber]
+
+                punisher.style.display = "block"
+
+                punisher.textContent = `Faça ${randomNumber3} ${randPunishment}`
+            }
         },2500)
     })
 })
