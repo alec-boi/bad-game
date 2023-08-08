@@ -12,7 +12,7 @@ optionImages.forEach((image, index) => {
         image.classList.add("active")
         result.textContent = "Aguarde..."
 
-        punisher.style.display = "block"
+        punisher.style.display = "none"
 
         userResult.src = machineResult.src = "./assets/rock.png"
 
